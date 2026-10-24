@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Doorline | Door Hanger Distribution in East Tennessee</title>
+<link rel="canonical" href="https://doorlinehangers.com/">
+<meta name="description" content="Local door-to-door door hanger distribution for home service companies in Knoxville, Lenoir City, Farragut, Maryville and Oak Ridge.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: one long page; navy hero with a die-cut hanger, then light sections; quote form is the goal. */
+:root{
+  --ink:#13233f; --ink-2:#2b3d5e; --paper:#f4f6f3; --card:#ffffff;
+  --line:#d9dfe4; --muted:#5a6779; --gold:#f2a900; --gold-ink:#3a2a00;
+  --display:"Bricolage Grotesque", "Arial Black", system-ui, sans-serif;
+  --body:"Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 var(--body)}
+img{max-width:100%}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(20px, env(safe-area-inset-left,0px));padding-right:max(20px, env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);line-height:1.08;text-wrap:balance;margin:0}
+h2{font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:-.01em}
+h3{font-size:20px;font-weight:600}
+p{margin:0}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 22px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid transparent;cursor:pointer;font:600 16px var(--body)}
+.btn-gold{background:var(--gold);color:var(--gold-ink)}
+.btn-gold:hover{filter:brightness(1.06)}
+.btn-ghost{border-color:currentColor;background:transparent}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* Header */
+header.top{background:var(--ink);color:#fff}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px}
+.brand{font-family:var(--display);font-weight:800;font-size:22px;text-decoration:none;display:flex;align-items:center;gap:10px}
+.brand-mark{width:18px;height:30px;border-radius:5px;background:var(--gold);position:relative}
+.brand-mark::after{content:"";position:absolute;left:50%;top:6px;width:8px;height:8px;margin-left:-4px;border-radius:50%;background:var(--ink)}
+.nav-links{display:flex;gap:22px;align-items:center;font-size:15px}
+.nav-links a{text-decoration:none;opacity:.85}
+.nav-links a:hover{opacity:1}
+@media (max-width:720px){.nav-links .hide-sm{display:none}}
+
+/* Hero */
+.hero{background:var(--ink);color:#fff;padding-block:40px 80px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(38px,6vw,66px);font-weight:800;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero .lede{font-size:19px;color:#c9d3e3;max-width:34em;margin-top:20px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero .area{margin-top:28px;font-size:14px;color:#9fb0c9}
+.hanger-stage{display:flex;justify-content:center}
+.hanger{width:230px;max-width:100%;aspect-ratio:3.5/8.5;background:var(--paper);color:var(--ink);border-radius:18px;position:relative;padding:118px 20px 20px;transform:rotate(4deg);box-shadow:0 30px 60px rgba(0,0,0,.35)}
+.hanger::before{content:"";position:absolute;left:50%;top:26px;width:62px;height:62px;margin-left:-31px;border-radius:50%;background:var(--ink)}
+.hanger::after{content:"";position:absolute;left:50%;top:56px;width:3px;height:48px;margin-left:-1.5px;background:var(--ink)}
+.hanger .tag{display:inline-block;background:var(--gold);color:var(--gold-ink);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:4px 8px;border-radius:4px}
+.hanger .hl{font-family:var(--display);font-weight:800;font-size:24px;line-height:1.05;margin-top:12px}
+.hanger .small{font-size:12px;color:var(--muted);margin-top:10px}
+.hanger .rule{height:1px;background:var(--line);margin:16px 0}
+.hanger .phone{font-family:var(--display);font-weight:600;font-size:17px}
+@media (max-width:820px){.hero-grid{grid-template-columns:1fr}.hanger-stage{order:-1}.hanger{width:170px;padding-top:96px}.hanger .hl{font-size:19px}}
+
+/* Sections */
+section{padding-block:72px}
+.section-head{max-width:640px;display:grid;gap:12px;margin-bottom:36px}
+.section-head p{color:var(--muted);font-size:17px}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;display:grid;gap:10px;align-content:start;counter-increment:s}
+.steps li::before{content:counter(s);font-family:var(--display);font-weight:800;font-size:15px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff}
+.steps p{color:var(--muted)}
+@media (max-width:820px){.steps{grid-template-columns:1fr}}
+
+.why{background:var(--card);border-block:1px solid var(--line)}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:36px 48px}
+.why-item{display:grid;gap:8px}
+.why-item p{color:var(--muted)}
+@media (max-width:720px){.why-grid{grid-template-columns:1fr}}
+
+.trades{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.trades span{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:8px 14px;font-size:15px}
+
+/* Quote form */
+.quote{background:var(--ink);color:#fff}
+.quote .section-head p{color:#c9d3e3}
+.quote .eyebrow{color:#9fb0c9}
+.form-card{background:var(--card);color:var(--ink);border-radius:18px;padding:32px;display:grid;gap:18px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:grid;gap:6px;min-width:0}
+.field.full{grid-column:1/-1}
+label{font-weight:600;font-size:14px}
+input,select,textarea{font:16px var(--body);padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);width:100%}
+textarea{min-height:110px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+.form-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px}
+.form-foot small{color:var(--muted)}
+.hp{position:absolute;left:-9999px}
+@media (max-width:640px){.form-grid{grid-template-columns:1fr}.form-card{padding:22px}}
+
+/* Pay */
+.pay-box{display:grid;grid-template-columns:1.3fr .7fr;gap:32px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:36px}
+.pay-box p{color:var(--muted);margin-top:10px}
+.pay-side{display:grid;gap:10px;justify-items:start}
+.pay-side small{color:var(--muted)}
+@media (max-width:720px){.pay-box{grid-template-columns:1fr;padding:24px}}
+
+/* FAQ */
+.faq{display:grid;gap:12px;max-width:760px}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 22px}
+summary{cursor:pointer;font-weight:600;font-size:17px}
+details p{color:var(--muted);margin-top:10px}
+
+footer{background:var(--ink);color:#c9d3e3;padding-block:40px;font-size:15px}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
+footer strong{color:#fff;font-family:var(--display)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span><span data-name>Doorline</span></a>
+    <nav class="nav-links">
+      <a class="hide-sm" href="#how">How it works</a>
+      <a class="hide-sm" href="#faq">FAQ</a>
+      <a class="hide-sm" href="#pay">Pay invoice</a>
+      <a class="btn btn-gold" href="#quote" style="padding:10px 18px">Get a quote</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow" style="color:#9fb0c9">Door hanger distribution · East Tennessee</p>
+        <h1 style="margin-top:14px">Your door hanger on <em>every door</em> in the neighborhoods you want.</h1>
+        <p class="lede">You run the jobs. We walk the streets. We hang your door hangers house by house in the areas you pick, so homeowners see your name right at their front door.</p>
+        <div class="ctas">
+          <a class="btn btn-gold" href="#quote">Get a free quote</a>
+          <a class="btn btn-ghost" href="#how">See how it works</a>
+        </div>
+        <p class="area">Serving Knoxville, Lenoir City, Farragut, Maryville, Oak Ridge and nearby.</p>
+      </div>
+      <div class="hanger-stage" aria-hidden="true">
+        <div class="hanger">
+          <span class="tag">Your company</span>
+          <p class="hl">Dryer vent cleaning this week</p>
+          <p class="small">We're working in your neighborhood. Call for a same-week visit.</p>
+          <div class="rule"></div>
+          <p class="phone">(865) 555-0100</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">How it works</p>
+        <h2>Three steps from your truck to their front door</h2>
+      </div>
+      <ol class="steps">
+        <li>
+          <h3>Tell us where</h3>
+          <p>Send a quick quote request with your service area and how many doors you want covered. We'll call you back with a price and a date.</p>
+        </li>
+        <li>
+          <h3>Hand off your hangers</h3>
+          <p>Drop off your printed door hangers or have the printer ship them to us. Don't have any yet? We can point you to a local printer.</p>
+        </li>
+        <li>
+          <h3>We hang, you get calls</h3>
+          <p>We walk the routes and hang one on every door. After each drop you get a recap of the neighborhoods and streets covered.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Why door hangers</p>
+        <h2>Local marketing that homeowners actually hold in their hands</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item">
+          <h3>One company per trade on each route</h3>
+          <p>We hang for a few home service companies at once, and never two that compete. If you're our dryer vent company, you're the only one on that door.</p>
+        </div>
+        <div class="why-item">
+          <h3>You choose the neighborhoods</h3>
+          <p>Target the subdivisions near your current jobs, older homes, or the zip codes where your best customers already live.</p>
+        </div>
+        <div class="why-item">
+          <h3>No contracts</h3>
+          <p>Book one drop to try it. Keep going if the phone rings. Many companies book a drop every month or every season.</p>
+        </div>
+        <div class="why-item">
+          <h3>A local person, not a call center</h3>
+          <p>We live and work in East Tennessee. You'll deal with the same person every time, by phone or text.</p>
+        </div>
+      </div>
+      <div style="margin-top:44px;display:grid;gap:12px">
+        <p class="eyebrow">Good fit for</p>
+        <div class="trades">
+          <span>Dryer vent cleaning</span><span>Pressure washing</span><span>Roofing</span><span>Gutter cleaning</span><span>Lawn care</span><span>Pest control</span><span>HVAC</span><span>Window cleaning</span><span>Plumbing</span><span>Painting</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote" id="quote">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Free quote</p>
+        <h2>Tell us about your business</h2>
+        <p>Takes about a minute. We'll reach out within one business day with pricing and the next open date.</p>
+      </div>
+
+      <!-- Quote requests are emailed to connor@doorlinehangers.com via FormSubmit (see SETUP.md). -->
+      <form class="form-card" id="quoteForm" action="https://formsubmit.co/connor@doorlinehangers.com" method="POST">
+        <input type="hidden" name="_subject" value="New door hanger quote request">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" id="nextUrl" value="">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="form-grid">
+          <div class="field"><label for="f-name">Your name</label><input id="f-name" name="Name" required autocomplete="name"></div>
+          <div class="field"><label for="f-company">Company name</label><input id="f-company" name="Company" required autocomplete="organization"></div>
+          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="Phone" type="tel" required autocomplete="tel"></div>
+          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
+          <div class="field">
+            <label for="f-trade">What do you do?</label>
+            <select id="f-trade" name="Trade" required>
+              <option value="">Choose one</option>
+              <option>Dryer vent cleaning</option><option>Pressure washing</option><option>Roofing</option>
+              <option>Gutter cleaning</option><option>Lawn care</option><option>Pest control</option>
+              <option>HVAC</option><option>Window cleaning</option><option>Plumbing</option><option>Painting</option><option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-qty">How many doors?</label>
+            <select id="f-qty" name="Doors" required>
+              <option value="">Choose a range</option>
+              <option>Under 1,000</option><option>1,000 to 2,000</option><option>2,000 to 5,000</option><option>5,000+</option><option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-area">Areas or zip codes</label>
+            <input id="f-area" name="Areas" placeholder="e.g. Farragut, 37922, West Knox">
+          </div>
+          <div class="field">
+            <label for="f-hangers">Do you have door hangers printed?</label>
+            <select id="f-hangers" name="Has hangers">
+              <option>Yes, ready to go</option><option>Need to print some</option><option>Need help designing them</option>
+            </select>
+          </div>
+          <div class="field full"><label for="f-notes">Anything else?</label><textarea id="f-notes" name="Notes" placeholder="Timing, specific streets, a promo you're running..."></textarea></div>
+        </div>
+        <div class="form-foot">
+          <small>We only use your info to follow up on this quote.</small>
+          <button class="btn btn-gold" type="submit">Request my quote</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section id="pay">
+    <div class="wrap">
+      <div class="pay-box">
+        <div>
+          <p class="eyebrow">Existing customers</p>
+          <h2 style="margin-top:10px">Pay your invoice</h2>
+          <p>Enter the amount from your quote or invoice and pay securely by card through Stripe. You'll get an emailed receipt.</p>
+        </div>
+        <div class="pay-side">
+          <!-- STRIPE SETUP: replace the href below with your Stripe Payment Link (see SETUP.md). -->
+          <a class="btn btn-gold" id="payBtn" href="https://buy.stripe.com/YOUR_PAYMENT_LINK" target="_blank" rel="noopener">Pay with card</a>
+          <small>Secure checkout by Stripe</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Questions</p>
+        <h2>Common questions</h2>
+      </div>
+      <div class="faq">
+        <details><summary>How much does it cost?</summary><p>It depends on how many doors and how spread out the neighborhoods are. Request a quote and we'll give you a flat price before anything gets hung.</p></details>
+        <details><summary>Do you put them in mailboxes?</summary><p>No. Mailboxes are federal property, so we only hang on front doors and door handles.</p></details>
+        <details><summary>Will my hanger be next to a competitor's?</summary><p>No. We only take one company per trade on a route.</p></details>
+        <details><summary>How do I pay?</summary><p>By card through Stripe using the Pay your invoice button. We'll agree on the price first, and you pay when we confirm your drop date.</p></details>
+        <details><summary>What areas do you cover?</summary><p>Knoxville, Lenoir City, Farragut, Maryville, Oak Ridge and surrounding East Tennessee towns. Ask if you're farther out.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div><strong data-name>Doorline</strong><br>Door hanger distribution for East Tennessee home service companies.</div>
+    <div>Call or text: <span id="footPhone">(865) 555-0100</span><br>connor@doorlinehangers.com<br>© <span id="yr"></span> <span data-name>Doorline</span></div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  // After submitting, FormSubmit sends people back to this page with #thanks
+  var next = document.getElementById('nextUrl');
+  if (location.protocol.indexOf('http') === 0) next.value = location.href.split('#')[0] + '#thanks';
+  if (location.hash === '#thanks') {
+    var card = document.getElementById('quoteForm');
+    card.innerHTML = '<h3 style="font-size:26px">Thanks, we got it.</h3><p style="color:var(--muted)">We\'ll call or text you within one business day with pricing and the next open date.</p>';
+    document.getElementById('quote').scrollIntoView();
+  }
+</script>
+</body>
+</html>
