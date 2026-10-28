@@ -119,11 +119,9 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);border-col
 @media (max-width:640px){.form-grid{grid-template-columns:1fr}.form-card{padding:22px}}
 
 /* Pay */
-.pay-box{display:grid;grid-template-columns:1.3fr .7fr;gap:32px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:36px}
+.pay-box{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:36px}
 .pay-box p{color:var(--muted);margin-top:10px}
-.pay-side{display:grid;gap:10px;justify-items:start}
-.pay-side small{color:var(--muted)}
-@media (max-width:720px){.pay-box{grid-template-columns:1fr;padding:24px}}
+@media (max-width:720px){.pay-box{padding:24px}}
 
 /* FAQ */
 .faq{display:grid;gap:12px;max-width:760px}
@@ -248,7 +246,7 @@ footer strong{color:#fff;font-family:var(--display)}
         <h2>The people walking your routes</h2>
         <p>Doorline is a small local crew. When you work with us, you'll know exactly who's hanging your door hangers.</p>
       </div>
-      <!-- PHOTOS: upload connor.jpg and matthew.jpg (square, about 600x600) to the GitHub repo next to index.html. -->
+      <!-- PHOTOS: upload connor.jpg, matthew.jpg and ryder.jpg (square, about 600x600) to the GitHub repo next to index.html. -->
       <div class="team-grid">
         <article class="person">
           <figure class="team-photo">
@@ -270,6 +268,17 @@ footer strong{color:#fff;font-family:var(--display)}
             <h3>Matthew</h3>
             <p class="role">Field team</p>
             <p>Matthew walks the routes and gets your hangers on every door, street by street, so nothing gets skipped.</p>
+          </div>
+        </article>
+        <article class="person">
+          <figure class="team-photo">
+            <img src="ryder.jpg" alt="Ryder, Doorline field team" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+            <div class="photo-fallback" hidden aria-hidden="true">R</div>
+          </figure>
+          <div class="person-copy">
+            <h3>Ryder</h3>
+            <p class="role">Field team</p>
+            <p>Ryder covers the neighborhoods on foot and makes sure every hanger is placed right on the door, so your offer is the first thing people see when they get home.</p>
           </div>
         </article>
       </div>
@@ -336,13 +345,8 @@ footer strong{color:#fff;font-family:var(--display)}
       <div class="pay-box">
         <div>
           <p class="eyebrow">Existing customers</p>
-          <h2 style="margin-top:10px">Pay your invoice</h2>
-          <p>Enter the amount from your quote or invoice and pay securely by card through Stripe. You'll get an emailed receipt.</p>
-        </div>
-        <div class="pay-side">
-          <!-- STRIPE SETUP: replace the href below with your Stripe Payment Link (see SETUP.md). -->
-          <a class="btn btn-gold" id="payBtn" href="https://buy.stripe.com/YOUR_PAYMENT_LINK" target="_blank" rel="noopener">Pay with card</a>
-          <small>Secure checkout by Stripe</small>
+          <h2 style="margin-top:10px">Paying your invoice</h2>
+          <p>Once we agree on a price, we email your invoice straight to you. Just open the email and pay by card or bank transfer from there. You'll get an emailed receipt once it goes through.</p>
         </div>
       </div>
     </div>
@@ -359,7 +363,7 @@ footer strong{color:#fff;font-family:var(--display)}
         <details><summary>Do I need to supply the door hangers?</summary><p>No. We design and print them for you, and it's included in your price. Send us your logo, phone number and offer, and we'll send a proof for you to approve.</p></details>
         <details><summary>Do you put them in mailboxes?</summary><p>No. Mailboxes are federal property, so we only hang on front doors and door handles.</p></details>
         <details><summary>Will my hanger be next to a competitor's?</summary><p>No. We only take one company per trade on a route.</p></details>
-        <details><summary>How do I pay?</summary><p>Once we agree on a price, we email you an invoice through Stripe. Pay by card or bank transfer from the email, or use the Pay your invoice button on this page.</p></details>
+        <details><summary>How do I pay?</summary><p>Once we agree on a price, we email you an invoice through Stripe. Pay by card or bank transfer right from the email.</p></details>
         <details><summary>What areas do you cover?</summary><p>Knoxville, Lenoir City, Farragut, Maryville, Oak Ridge and surrounding East Tennessee towns. Ask if you're farther out.</p></details>
       </div>
     </div>
